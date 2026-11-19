@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anel Magauiya — Moodboard</title>
+<meta name="description" content="Moodboard: the aesthetic, references and visual eye of Anel Magauiya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0e0907;color:#efe3d3;font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:48px 0 28px}
+.back{font-family:'Space Mono',monospace;font-size:12px;color:#c9a56b;text-decoration:none}
+.back:hover{color:#f2c879}
+.eyebrow{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c9a56b;margin:26px 0 10px}
+h1{font-size:clamp(40px,8vw,76px);line-height:.98;letter-spacing:-.035em;font-weight:800}
+h1 em{font-style:normal;color:#e0a458}
+.lead{margin-top:16px;max-width:34em;color:#cdbca6;font-size:clamp(16px,2.2vw,19px)}
+.board{columns:3;column-gap:14px;padding:12px 0 50px}
+.board figure{break-inside:avoid;margin-bottom:14px;border-radius:14px;overflow:hidden;background:#1a110c}
+.board img{width:100%;display:block;cursor:zoom-in}
+footer{border-top:1px solid #2a1e16;padding:26px 0 44px;color:#8f7f6c;font-family:'Space Mono',monospace;font-size:12px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+@media(max-width:820px){.board{columns:2}}
+@media(max-width:480px){.board{columns:1}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="back" href="./">← Back to portfolio</a>
+  <div class="eyebrow">Moodboard · 10 images</div>
+  <h1>Warm light,<br><em>quiet details.</em></h1>
+  <p class="lead">Late evenings, amber lamps, books and paper, autumn after dark. The references I come back to when I make things.</p>
+</div></header>
+<main class="wrap">
+  <div class="board">
+    <figure><img src="mood/mood-01.jpg" alt="Definition card reading INFJ, the empath" loading="lazy"></figure>
+    <figure><img src="mood/mood-02.jpg" alt="Warm lit sign above a cafe door reading in the right eyes you will be art" loading="lazy"></figure>
+    <figure><img src="mood/mood-03.jpg" alt="Person on the floor surrounded by papers, lit by a laptop screen" loading="lazy"></figure>
+    <figure><img src="mood/mood-04.jpg" alt="Black cat in round glasses resting its paws on an open book" loading="lazy"></figure>
+    <figure><img src="mood/mood-05.jpg" alt="Dim shelf of records and books under warm lamps" loading="lazy"></figure>
+    <figure><img src="mood/mood-06.jpg" alt="Heart shape made of dark hair on a pale surface" loading="lazy"></figure>
+    <figure><img src="mood/mood-07.jpg" alt="Close-up of a brown eye" loading="lazy"></figure>
+    <figure><img src="mood/mood-08.jpg" alt="Chocolate pieces lying on handwritten paper" loading="lazy"></figure>
+    <figure><img src="mood/mood-09.jpg" alt="Autumn park at night with street lamps" loading="lazy"></figure>
+    <figure><img src="mood/mood-10.jpg" alt="Golden lilies in the dark" loading="lazy"></figure>
+  </div>
+</main>
+<footer><div class="wrap">Anel Magauiya · KBTU · Almaty</div></footer>
+<div id="lb"><img alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),im=lb.querySelector('img');
+  document.querySelectorAll('.board img').forEach(function(el){
+    el.addEventListener('click',function(){im.src=el.src;im.alt=el.alt;lb.classList.add('on');});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('on');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+})();
+</script>
+</body>
+</html>
