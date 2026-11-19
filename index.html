@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anel Magauiya — Portfolio</title>
+<meta name="description" content="Anel Magauiya — frontend developer and visual designer. Information Systems student at KBTU, Almaty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0e12; --panel:#14171d; --line:#262b34; --text:#eef0f2; --muted:#9aa3ae;
+  --lime:#d6ff4f; --cyan:#8fe3ee; --pink:#ff5fd2;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.mono{font-family:'Space Mono',ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:20;background:rgba(12,14,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+nav b{font-weight:800;margin-right:auto;letter-spacing:-.01em}
+nav a{font-family:'Space Mono',monospace;font-size:12px;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--lime)}
+.hero{padding:56px 0 40px}
+.hero .grid{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center}
+.tag{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;color:var(--bg);background:var(--lime);padding:5px 10px;border-radius:99px;margin-bottom:18px}
+h1{font-size:clamp(44px,9vw,92px);line-height:.95;font-weight:800;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--lime)}
+.lead{font-size:clamp(17px,2.4vw,21px);color:#cfd5dc;margin-top:20px;max-width:34em}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-family:'Space Mono',monospace;font-size:12px;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.chip.hot{border-color:var(--cyan);color:var(--cyan)}
+.hero-art{background:#fff;border-radius:28px;padding:10px;transform:rotate(2deg);box-shadow:10px 10px 0 var(--pink)}
+.hero-art img{width:100%;display:block;border-radius:20px;image-rendering:pixelated}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.eyebrow{font-family:'Space Mono',monospace;font-size:12px;color:var(--lime);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin-bottom:20px}
+h3{font-size:22px;letter-spacing:-.02em;margin-bottom:6px}
+p{color:#cfd5dc}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.about p+p{margin-top:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.project{margin-top:26px}
+.project .meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.project ul{margin:12px 0 0 18px;color:#cfd5dc}
+.project li{margin:5px 0}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{font-family:'Space Mono',monospace;font-size:13px;text-decoration:none;padding:10px 16px;border-radius:99px;border:1px solid var(--lime);color:var(--lime);transition:.15s}
+.btn:hover{background:var(--lime);color:var(--bg)}
+.btn.alt{border-color:var(--cyan);color:var(--cyan)}
+.btn.alt:hover{background:var(--cyan);color:var(--bg)}
+.sheets{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.sheets figure{background:#f3ece0;border-radius:12px;overflow:hidden}
+.sheets img{width:100%;display:block;image-rendering:pixelated;cursor:zoom-in}
+.sheets figcaption{font-family:'Space Mono',monospace;font-size:11px;padding:7px 9px;background:var(--panel);color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.cert img{width:100%;border-radius:12px;display:block;cursor:zoom-in}
+.gallery{columns:3;column-gap:14px}
+.gallery figure{break-inside:avoid;margin-bottom:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.gallery img{width:100%;display:block;cursor:zoom-in;background:#fff}
+.gallery figcaption{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);padding:8px 10px}
+.comic{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.comic img{width:100%;display:block;border-radius:12px;background:#fff;cursor:zoom-in}
+video{width:100%;max-height:520px;border-radius:14px;background:#000;display:block}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.skills h3{font-size:16px;font-family:'Space Mono',monospace;color:var(--cyan);font-weight:400;margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font-size:14px;background:#1b1f27;border-radius:8px;padding:4px 10px}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-family:'Space Mono',monospace;font-size:12px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+@media(max-width:820px){
+  .hero .grid,.about,.two{grid-template-columns:1fr}
+  .hero-art{max-width:360px;margin:6px auto 0}
+  .sheets{grid-template-columns:repeat(2,1fr)}
+  .gallery{columns:2}
+  .skills{grid-template-columns:1fr}
+}
+@media(max-width:480px){.gallery{columns:1}.comic{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <b>Anel M.</b>
+  <a href="#about">About</a><a href="#projects">Projects</a><a href="#art">Art</a><a href="#comic">Comic</a><a href="#ai">AI</a><a href="#skills">Skills</a>
+</div></nav>
+
+<header class="hero"><div class="wrap grid">
+  <div>
+    <span class="tag">PORTFOLIO · 2026</span>
+    <h1>Anel<br><em>Magauiya</em></h1>
+    <p class="lead">I build interfaces, animate them, design the characters that live in them — and draw in my spare time. Frontend developer and visual designer, 18.</p>
+    <div class="facts">
+      <span class="chip hot">Information Systems · KBTU</span>
+      <span class="chip">Almaty, Kazakhstan</span>
+      <span class="chip">2 hackathons</span>
+      <span class="chip">Frontend · Design · AI tools</span>
+    </div>
+  </div>
+  <div class="hero-art"><img src="img/sprite-engineer-hero.jpg" alt="Pixel-art astronaut character designed for the Engineer role"></div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="eyebrow">01 / About</div>
+  <h2>Code on one side, characters on the other.</h2>
+  <div class="about">
+    <div>
+      <p>I'm an Information Systems student at KBTU with two hackathons behind me. At hackathons I take the part of the project people actually see: the frontend, the animation, the look and feel.</p>
+      <p>I write in C++, Python and SQL, but I'm happiest where code meets visuals — a UI that moves well, a character that has a clear silhouette and a palette with a reason behind it.</p>
+    </div>
+    <div>
+      <p>I've drawn since long before I coded: original characters, sketches, manga-style comics. Lately I've been bringing drawings to life with AI image and video tools (Gemini, Veo), and I'm curious how far a single person can take that.</p>
+      <p>Filmmaking is the craft I want to try next.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="eyebrow">02 / Projects</div>
+  <h2>Hackathon work</h2>
+
+  <article class="card project">
+    <div class="meta"><span class="chip hot">NASA Space Apps Challenge 2026</span><span class="chip">Team project</span><span class="chip">Browser game</span></div>
+    <h3>Space Mission Design Game</h3>
+    <p>A game built for the NASA Space Apps "Space Mission Design Game" challenge, where a mission crew is made up of specialist roles — Biologist, Geologist, Scout and Engineer.</p>
+    <ul>
+      <li><b>Frontend and animation</b> for the game interface.</li>
+      <li>Built the <b>internal base view</b> of the game.</li>
+      <li><b>Character design:</b> pixel-art astronauts for every role, with an individual colour palette per role (AI-assisted pixel-art workflow, direction and palettes by me).</li>
+    </ul>
+    <div class="sheets">
+      <figure><img src="img/sheet-biologist.jpg" alt="Biologist character sheet with green palette" loading="lazy"><figcaption>Biologist · greens</figcaption></figure>
+      <figure><img src="img/sheet-geologist.jpg" alt="Geologist character sheet with orange palette" loading="lazy"><figcaption>Geologist · oranges</figcaption></figure>
+      <figure><img src="img/sheet-scout.jpg" alt="Scout character sheet with red and yellow palette" loading="lazy"><figcaption>Scout · red + yellow</figcaption></figure>
+      <figure><img src="img/sheet-engineer.jpg" alt="Engineer character sheet with teal palette" loading="lazy"><figcaption>Engineer · teals</figcaption></figure>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://nurmukasan.github.io/Nasa-Space-App-Challange" target="_blank" rel="noopener">Play the game →</a>
+      <a class="btn alt" href="https://www.spaceappschallenge.org/2026/challenges/space-mission-design-game/" target="_blank" rel="noopener">Challenge page →</a>
+    </div>
+  </article>
+
+  <article class="card project">
+    <div class="meta"><span class="chip hot">Decentrathon 6.0</span><span class="chip">Oct 30–31, 2026</span><span class="chip">Track: Support Copilot by Grand Mobile</span></div>
+    <h3>Opus &amp; Astra</h3>
+    <div class="two">
+      <div>
+        <p>Team project for Kazakhstan's largest multi-location hackathon, built in the Support Copilot track.</p>
+        <ul>
+          <li><b>Frontend and animation</b>.</li>
+          <li>Participation certificate verified by ID <span class="mono">HCK-2026-9C0YTJ5X</span>.</li>
+        </ul>
+        <div class="links"><a class="btn" href="https://github.com/BAITC-Hacks/hack-faccb6cc-opus-and-astra" target="_blank" rel="noopener">GitHub repo →</a></div>
+      </div>
+      <div class="cert"><img src="img/certificate.jpg" alt="Decentrathon 6.0 participant certificate" loading="lazy"></div>
+    </div>
+  </article>
+</div></section>
+
+<section id="art"><div class="wrap">
+  <div class="eyebrow">03 / Illustration</div>
+  <h2>Characters &amp; sketches</h2>
+  <p style="margin-bottom:24px">Original characters and studies — digital and on paper. Click any image to enlarge.</p>
+  <div class="gallery">
+    <figure><img src="img/art-red.jpg" alt="Digital painting of a character with red skin on a red background" loading="lazy"><figcaption>Digital painting</figcaption></figure>
+    <figure><img src="img/art-vellsevil.jpg" alt="Original character sheet: Vellsevul with twin swords" loading="lazy"><figcaption>Original character · Vellsevul</figcaption></figure>
+    <figure><img src="img/art-bw-portrait.jpg" alt="Black and white digital portrait of a thoughtful character" loading="lazy"><figcaption>Black &amp; white portrait</figcaption></figure>
+    <figure><img src="img/art-lineart.jpg" alt="Line art portrait of a character with a leaf crown" loading="lazy"><figcaption>Line art</figcaption></figure>
+    <figure><img src="img/sketch-jeans.jpg" alt="Pencil sketch of a character in a denim jacket" loading="lazy"><figcaption>Pencil sketch</figcaption></figure>
+    <figure><img src="img/sketch-ink-grid.jpg" alt="Ink and pencil portrait of a spiky-haired character looking down, drawn on squared paper" loading="lazy"><figcaption>Ink &amp; pencil on squared paper</figcaption></figure>
+    <figure><img src="img/sketch-kenpachi.jpg" alt="Ink sketch of a wild-haired swordsman" loading="lazy"><figcaption>Ink on squared paper</figcaption></figure>
+    <figure><img src="img/sketch-blue.jpg" alt="Blue pen sketch with lilies" loading="lazy"><figcaption>Blue pen</figcaption></figure>
+    <figure><img src="img/sketch-bowl.jpg" alt="Monochrome sketch of a character in a glass bowl" loading="lazy"><figcaption>Concept study</figcaption></figure>
+    <figure><img src="img/sketch-smile.jpg" alt="Pencil study of a grinning character with spiky hair" loading="lazy"><figcaption>Expression study</figcaption></figure>
+    <figure><img src="img/art-bike.jpg" alt="Line art of a character sitting on a sport motorcycle" loading="lazy"><figcaption>Line art · character &amp; bike</figcaption></figure>
+    <figure><img src="img/sketch-love.jpg" alt="Line sketch of two characters resting together" loading="lazy"><figcaption>Line sketch</figcaption></figure>
+    <figure><img src="img/sketch-pose.jpg" alt="Line art of a man in a jacket glancing back over his shoulder" loading="lazy"><figcaption>Pose study</figcaption></figure>
+    <figure><img src="img/sketch-peak.jpg" alt="Colour sketch of a long-haired character in flared jeans" loading="lazy"><figcaption>Character concept · Peak</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="comic"><div class="wrap">
+  <div class="eyebrow">04 / Comic</div>
+  <h2>Short comic</h2>
+  <p style="margin-bottom:20px">Black-and-white, manga-style pages: layout, panels, lettering and character acting. (Dialogue is in Russian.)</p>
+  <div class="comic">
+    <img src="img/comic-1.jpg" alt="Comic page 1" loading="lazy">
+    <img src="img/comic-2.jpg" alt="Comic page 2" loading="lazy">
+  </div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <div class="eyebrow">05 / AI experiments</div>
+  <h2>Working with generative tools</h2>
+  <div class="two">
+    <div>
+      <p>I use generative image and video models as part of my workflow, not instead of it: I direct the idea, choose the references and iterate.</p>
+      <ul style="margin:14px 0 0 18px;color:#cfd5dc">
+        <li>Animated my own drawings with AI tools.</li>
+        <li>Made short intro videos in Gemini / Veo for school open lessons (shared on request).</li>
+        <li>Used an AI-assisted pipeline for the pixel-art character sheets above, then set the roles and palettes myself.</li>
+      </ul>
+    </div>
+    <video src="media/ai-roses.mp4" poster="media/ai-roses-poster.jpg" controls playsinline muted loop preload="metadata"></video>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="eyebrow">06 / Skills</div>
+  <h2>What I bring</h2>
+  <div class="skills">
+    <div class="card"><h3>BUILD</h3><div class="tags"><span>Frontend</span><span>UI animation</span><span>Python</span><span>C++</span><span>SQL</span><span>Teamwork at hackathons</span></div></div>
+    <div class="card"><h3>MAKE</h3><div class="tags"><span>Character design</span><span>Colour palettes</span><span>Digital illustration</span><span>Comics</span><span>Pixel art</span></div></div>
+    <div class="card"><h3>EXPLORE</h3><div class="tags"><span>Gemini</span><span>Veo</span><span>AI image &amp; video</span><span>Filmmaking (learning)</span><span>French (basic)</span></div></div>
+  </div>
+
+</div></section>
+
+<footer><div class="wrap">© 2026 Anel Magauiya · KBTU · Almaty</div></footer>
+
+<div id="lb"><img alt=""></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),im=lb.querySelector('img');
+  document.querySelectorAll('.gallery img,.sheets img,.comic img,.cert img').forEach(function(el){
+    el.addEventListener('click',function(){im.src=el.src;im.alt=el.alt;lb.classList.add('on');});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('on');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+})();
+</script>
+</body>
+</html>
